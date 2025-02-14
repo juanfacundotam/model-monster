@@ -66,10 +66,8 @@
         <div id="loader" class="loader"></div>
         <h1>Cargando AR</h1>
     </div>
-    <model-viewer style="visibility: hidden;" id="model" src="./assets/autooo.glb" poster="./assets/mike.png" ar camera-controls
-        touch-action="pan-y" auto-rotate disable-pan alt="A 3D model of an astronaut" shadow-intensity="2"
-        skybox-image="./assets/spruit_sunrise_4k_LDR.jpg" skybox-height="100cm" camera-orbit="-0deg 85deg auto"
-        min-camera-orbit="auto 50deg" max-camera-orbit="auto 90deg" xr-environment exposure="2.5"></model-viewer>
+    <model-viewer style="visibility: hidden;" id="model" src="./assets/mike.glb" poster="./assets/mike.png" ar camera-controls
+        touch-action="pan-y" auto-rotate disable-pan alt="A 3D model of an astronaut" shadow-intensity="2" camera-orbit="-0deg 85deg auto" min-camera-orbit="auto 50deg" max-camera-orbit="auto 90deg" xr-environment exposure="2.5"></model-viewer>
     <!-- <div id="card"> -->
 
  
@@ -143,39 +141,6 @@
         modelViewer.style.transform = 'scale(1)';
 
 
-        // Detectar la URL antes de que se cargue el DOM
-        // console.log(window.location.href); // Esto mostrará la URL actual en la consola
-        // const urlParams = new URLSearchParams(window.location.search);
-        // console.log(urlParams)
-        // if (urlParams.get('source') === 'qr') {
-        // document.getElementById('card').style.visibility = 'hidden';
-        // document.getElementById('loader-div').style.display = 'flex';
-        //     console.log('El usuario ingresó a través del QR');
-        //     document.getElementById('card').style.visibility = 'hidden';
-        //     document.getElementById('loader-div').style.display = 'flex';
-
-        //     document.getElementById('card').style.visibility = 'visible';
-        //     document.getElementById('loader-div').style.display = 'none';
-
-
-        //     const supportsAR = await modelViewer.canActivateAR;
-
-
-
-        //     if (supportsAR) {
-        //         modelViewer.activateAR();
-        //     } else {
-        //         alert('Tu dispositivo no es compatible con realidad aumentada.');
-        //     }
-        // }
-        // else {
-        //     document.getElementById('card').style.visibility = 'visible';
-        //     document.getElementById('loader-div').style.display = 'none';
-
-        //     document.getElementById('card').style.visibility = 'hidden';
-        //     document.getElementById('loader-div').style.display = 'flex';
-        //     console.log("no entro por qr")
-        // }
 
 
 
