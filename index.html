@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- https://comercial-tec-3d.clarin.com/model-car/index.html -->
+    <!-- https://comercial-tec-3d.clarin.com/model-inc/index.html -->
     <title>3D-Blast</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,40 +10,7 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Función que se ejecuta lo antes posible -->
-    <!-- <script>
-        (async function handleQRCodeAccessEarly() {
-            const urlParams = new URLSearchParams(window.location.search);
 
-            if (urlParams.get('source') === 'qr') {
-                console.log('El usuario ingresó a través del QR');
-                document.getElementById('card').style.visibility = 'hidden';
-                document.getElementById('loader-div').style.display = 'flex';
-
-                // document.getElementById('card').style.visibility = 'visible';
-                // document.getElementById('loader-div').style.display = 'none';
-                window.onload = function () {
-                    window.location.href = "https://www.ejemplo.com";
-                };
-
-                const supportsAR = await modelViewer.canActivateAR;
-
-
-                if (supportsAR) {
-                    modelViewer.activateAR();
-                } else {
-                    alert('Tu dispositivo no es compatible con realidad aumentada.');
-                }
-            } else {
-                // document.getElementById('card').style.visibility = 'visible';
-                // document.getElementById('loader-div').style.display = 'none';
-
-                // document.getElementById('card').style.visibility = 'hidden';
-                // document.getElementById('loader-div').style.display = 'flex';
-                // console.log("no entro por qr")
-            }
-        })();
-    </script> -->
 
     <script src="./function.js" defer></script>
 </head>
@@ -78,32 +45,23 @@
         <img class="fondo" src="./assets/bg.webp" alt="">
 
 
-        <!-- <model-viewer id="model" src="./assets/auto.glb"  poster="./assets/auto.png"
-            alt="Darthg model" shadow-intensity="1" camera-controls auto-rotate ar disable-zoom
-            camera-orbit="-30deg 70deg auto" loading="eager" min-camera-orbit="auto 60deg"
-            max-camera-orbit="auto 110deg" skybox-image="./assets/22.png" skybox-height="200cm" xr-environment exposure="3" ar-scale="fixed">
-        </model-viewer>   -->
         <model-viewer id="model" src="./assets/mike.glb" poster="./assets/mike.png" ar camera-controls
             touch-action="pan-y" auto-rotate disable-pan alt="A 3D model of an astronaut" shadow-intensity="2"
             skybox-height="100cm" camera-orbit="-0deg 85deg auto" min-camera-orbit="auto 50deg"
             max-camera-orbit="auto 90deg" xr-environment exposure="0.8"></model-viewer>
 
         <img class="centro" src="./assets/titulo.webp" alt="">
-        <!-- <img class="base" src="./assets/base.webp" alt=""> -->
-
-
 
         <img id="qrcodepng" class="codepng" src="./assets/qr-code.png" alt="">
 
-        <!-- <h1>Código QR Generado</h1> -->
         <div id="footer_desktop" class="footer_desktop">
             <div class="text-footer">
                 <p class="primer-texto-footer">Escaneá el QR y miralo con</p>
                 <p class="segundo-texto-footer">REALIDAD AUMENTADA</p>
             </div>
             <img class="logo-ar" src="./assets/AR-icon.webp" alt="">
-            <!-- <div id="qrcode" class="code" style="display: none;"></div> -->
         </div>
+
         <div id="footer_mobile" class="footer_desktop">
             <div class="text-footer">
                 <p class="primer-texto-footer">Apreta el botón y miralo con</p>
@@ -112,29 +70,27 @@
             <img class="logo-ar" src="./assets/AR-icon.webp" alt="">
         </div>
 
-        <div  id="arBut" class="arBut">
-           <div class="but-svg">
-
-               <svg version="1.1" id="view_x5F_in_x5F_AR_x5F_icon" fill="white" xmlns="http://www.w3.org/2000/svg"
-               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="79px"
-               viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-               <rect id="Bounding_Box" x="0" y="0" fill="none" stroke="" width="24" height="24"></rect>
-               <g id="Art_layer">
-                   <path d="M3,4c0-0.55,0.45-1,1-1h2V1H4C2.35,1,1,2.35,1,4v2h2V4z"></path>
-                   <path d="M20,3c0.55,0,1,0.45,1,1v2h2V4c0-1.65-1.35-3-3-3h-2v2H20z"></path>
-                   <path d="M4,21c-0.55,0-1-0.45-1-1v-2H1v2c0,1.65,1.35,3,3,3h2v-2H4z"></path>
-                   <path d="M20,21c0.55,0,1-0.45,1-1v-2h2v2c0,1.65-1.35,3-3,3h-2v-2H20z"></path>
-                   <g>
-                       <path
-                       d="M18.25,7.6l-5.5-3.18c-0.46-0.27-1.04-0.27-1.5,0L5.75,7.6C5.29,7.87,5,8.36,5,8.9v6.35c0,0.54,0.29,1.03,0.75,1.3
+        <div id="arBut" class="arBut">
+            <div class="but-svg">
+                <svg version="1.1" id="view_x5F_in_x5F_AR_x5F_icon" fill="white" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="79px"
+                    viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+                    <rect id="Bounding_Box" x="0" y="0" fill="none" stroke="" width="24" height="24"></rect>
+                    <g id="Art_layer">
+                        <path d="M3,4c0-0.55,0.45-1,1-1h2V1H4C2.35,1,1,2.35,1,4v2h2V4z"></path>
+                        <path d="M20,3c0.55,0,1,0.45,1,1v2h2V4c0-1.65-1.35-3-3-3h-2v2H20z"></path>
+                        <path d="M4,21c-0.55,0-1-0.45-1-1v-2H1v2c0,1.65,1.35,3,3,3h2v-2H4z"></path>
+                        <path d="M20,21c0.55,0,1-0.45,1-1v-2h2v2c0,1.65-1.35,3-3,3h-2v-2H20z"></path>
+                        <g>
+                            <path
+                                d="M18.25,7.6l-5.5-3.18c-0.46-0.27-1.04-0.27-1.5,0L5.75,7.6C5.29,7.87,5,8.36,5,8.9v6.35c0,0.54,0.29,1.03,0.75,1.3
                        l5.5,3.18c0.46,0.27,1.04,0.27,1.5,0l5.5-3.18c0.46-0.27,0.75-0.76,0.75-1.3V8.9C19,8.36,18.71,7.87,18.25,7.6z M7,14.96v-4.62
                        l4,2.32v4.61L7,14.96z M12,10.93L8,8.61l4-2.31l4,2.31L12,10.93z M13,17.27v-4.61l4-2.32v4.62L13,17.27z">
-                    </path>
-                </g>
-            </g>
-        </svg>
-    </div>
-    <!-- </button> -->
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
         </div>
     </div>
 
@@ -145,8 +101,7 @@
 
 
 
-    <!-- Loads <model-viewer> for modern browsers: -->
-    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"> -->
+
     <script type="module" src="./model-viewer.js"></script>
 
     <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
@@ -155,37 +110,17 @@
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
         if (!isMobile) {
-            // document.getElementById('notaar').style.display = 'none';
             const link = "https://comercial-tec-3d.clarin.com/model-car/index.html?source=qr";
 
-            // const logoUrl = "./assets/logo1.png"; // Ruta del logo
-
-            // new QRCode(document.getElementById('qrcode'), {
-            //     text: link,
-            //     width: 80,
-            //     height: 80,
-            //     colorDark: "#000000",
-            //     colorLight: "#ffffff",
-            //     correctLevel: QRCode.CorrectLevel.H
-            // });
-
-            // // Mostrar el link debajo del QR
-            // const linkElement = document.createElement('a');
-            // linkElement.href = link;
-
-            // document.body.appendChild(linkElement);
             document.getElementById('footer_mobile').style.display = 'none';
             document.getElementById('arBut').style.display = 'none';
 
         } else {
-            // Si es un móvil, ocultar la sección del QR
-            // document.getElementById('qrcode').style.display = 'none';
-            document.getElementById('arBut').style.display = 'block';
+
+            document.getElementById('arBut').style.display = 'flex';
             document.getElementById('footer_desktop').style.display = 'none';
             document.getElementById('qrcodepng').style.display = 'none';
-            // document.getElementById('notaar').style.display = 'block';
-            // document.getElementById('model').style.top = '0px';
-            // document.getElementById('background').style.top = '180px';
+
         }
 
     </script>
@@ -261,19 +196,17 @@
 
             if (arButton) {
                 console.log("Botón AR encontrado:", arButton);
-                arButton.style.boder = '1px solid white';
-                arButton.style.cursor = 'pointer';
-                arButton.style.width = '70px';
-                arButton.style.height = '70px';
-                arButton.style.transform = 'scale(1.2)';
-                arButton.style.position = 'absolute';
-                // arButton.style.top = '450px';
-                // arButton.style.left = '220px';
-                arButton.style.visibility = 'hidden';
+                // arButton.style.boder = '1px solid white';
+                // arButton.style.cursor = 'pointer';
+                // arButton.style.width = '70px';
+                // arButton.style.height = '70px';
+                // arButton.style.transform = 'scale(1.2)';
+                // arButton.style.position = 'absolute';
+                // arButton.style.visibility = 'hidden';
 
                 modelViewer.style.transform = 'scale(1)';
                 modelViewer.style.top = '-125px';
-                modelViewer.style.left = '6px';
+                modelViewer.style.left = '0px';
 
 
             } else {
