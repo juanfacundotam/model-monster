@@ -134,8 +134,8 @@
 
         const modelViewer = document.querySelector('model-viewer');
         // modelViewer.style.visibility = 'hidden';
-        modelViewer.style.top = '-100px';
-        modelViewer.style.transform = 'scale(0.957)';
+        modelViewer.style.top = '-71px';
+        modelViewer.style.transform = 'scale(0.988)';
 
 
 
@@ -178,10 +178,11 @@
                 const supportsAR = await modelViewer.canActivateAR;
 
                 if (supportsAR) {
-                    window.open("https://profound-pony-ad13d7.netlify.app/index-but.html");
-                    modelViewer.style.top = '-80px';
+                    window.open("https://comercial-tec-3d.clarin.com/model-inc/index-but.html");
+                    modelViewer.style.top = '0px';
                     modelViewer.activateAR();
                 } else {
+                    modelViewer.style.top = '0px';
                     
                     // modelViewer.style.top = '-1000px';
 
