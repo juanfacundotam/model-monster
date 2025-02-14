@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <!-- https://comercial-tec-3d.clarin.com/model-car/index.html -->
+    <title>3D-Blast</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Función que se ejecuta lo antes posible -->
+    <!-- <script>
+        (async function handleQRCodeAccessEarly() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            if (urlParams.get('source') === 'qr') {
+                console.log('El usuario ingresó a través del QR');
+                document.getElementById('card').style.visibility = 'hidden';
+                document.getElementById('loader-div').style.display = 'flex';
+
+                // document.getElementById('card').style.visibility = 'visible';
+                // document.getElementById('loader-div').style.display = 'none';
+                window.onload = function () {
+                    window.location.href = "https://www.ejemplo.com";
+                };
+
+                const supportsAR = await modelViewer.canActivateAR;
+
+
+                if (supportsAR) {
+                    modelViewer.activateAR();
+                } else {
+                    alert('Tu dispositivo no es compatible con realidad aumentada.');
+                }
+            } else {
+                // document.getElementById('card').style.visibility = 'visible';
+                // document.getElementById('loader-div').style.display = 'none';
+
+                // document.getElementById('card').style.visibility = 'hidden';
+                // document.getElementById('loader-div').style.display = 'flex';
+                // console.log("no entro por qr")
+            }
+        })();
+    </script> -->
+
+    <script src="./function.js" defer></script>
+</head>
+
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log(urlParams)
+        if (urlParams.get('source') === 'qr') {
+            document.getElementById('card').style.visibility = 'hidden';
+            document.getElementById('loader-div').style.display = 'flex';
+        }
+        console.log(urlParams.size === 0)
+        if (urlParams.size === 0) {
+            // document.getElementById('card').style.visibility = 'hidden';
+            // document.getElementById('loader-div').style.display = 'flex';
+        }
+    </script>
+    <div id="loader-div" class="loader-div">
+        <div id="loader" class="loader"></div>
+        <h1>Cargando AR</h1>
+    </div>
+    <div id="card">
+
+        <!-- <div id="background" class="background"></div> -->
+        <img class="logo" src="./assets/logo1.png" alt="">
+
+        <div class="div_noticia">
+            <h1 class="title">Pasado, presente y futuro</h1>
+            <p class="cuerpo">Noticias que te llevan más lejos.</p>
+        </div>
+
+
+        <!-- <model-viewer id="model" src="./assets/auto.glb"  poster="./assets/auto.png"
+            alt="Darthg model" shadow-intensity="1" camera-controls auto-rotate ar disable-zoom
+            camera-orbit="-30deg 70deg auto" loading="eager" min-camera-orbit="auto 60deg"
+            max-camera-orbit="auto 110deg" skybox-image="./assets/22.png" skybox-height="200cm" xr-environment exposure="3" ar-scale="fixed">
+        </model-viewer>   -->
+        <model-viewer id="model" src="./assets/autooo.glb" poster="./assets/auto.png" ar camera-controls
+            touch-action="pan-y" auto-rotate disable-pan alt="A 3D model of an astronaut" shadow-intensity="2"
+            skybox-image="./assets/spruit_sunrise_4k_LDR.jpg" skybox-height="100cm" camera-orbit="-0deg 85deg auto"
+            min-camera-orbit="auto 50deg" max-camera-orbit="auto 90deg" xr-environment exposure="2.5"></model-viewer>
+
+
+
+        <!-- <h1>Código QR Generado</h1> -->
+        <div id="footer_desktop" class="footer">
+            <div id="indication" class="indicacion">
+                <p>ACCEDE A</p>
+                <p>REALIDAD</p>
+                <p>AUMENTADA</p>
+            </div>
+            <!-- <div id="qrcode" class="code" style="display: none;"></div> -->
+            <div id="qrcodepng" class="codepng">
+                <img src="./assets/qr-code.png" alt="">
+            </div>
+        </div>
+
+        <div class="footer_mobile" id="arBut">
+
+            <div id="notaar" class="notaar">
+                <div id="indication" class="indicacion">
+                    <p>ACCEDE A</p>
+                    <p>REALIDAD</p>
+                    <p>AUMENTADA</p>
+                </div>
+                <div id="qrcode" class="code"></div>
+            </div>
+
+            <button class="arbut"><svg version="1.1" id="view_x5F_in_x5F_AR_x5F_icon" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
+                    viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+                    <rect id="Bounding_Box" x="0" y="0" fill="white" width="24" height="24"></rect>
+                    <g id="Art_layer">
+                        <path d="M3,4c0-0.55,0.45-1,1-1h2V1H4C2.35,1,1,2.35,1,4v2h2V4z"></path>
+                        <path d="M20,3c0.55,0,1,0.45,1,1v2h2V4c0-1.65-1.35-3-3-3h-2v2H20z"></path>
+                        <path d="M4,21c-0.55,0-1-0.45-1-1v-2H1v2c0,1.65,1.35,3,3,3h2v-2H4z"></path>
+                        <path d="M20,21c0.55,0,1-0.45,1-1v-2h2v2c0,1.65-1.35,3-3,3h-2v-2H20z"></path>
+                        <g>
+                            <path
+                                d="M18.25,7.6l-5.5-3.18c-0.46-0.27-1.04-0.27-1.5,0L5.75,7.6C5.29,7.87,5,8.36,5,8.9v6.35c0,0.54,0.29,1.03,0.75,1.3
+                            l5.5,3.18c0.46,0.27,1.04,0.27,1.5,0l5.5-3.18c0.46-0.27,0.75-0.76,0.75-1.3V8.9C19,8.36,18.71,7.87,18.25,7.6z M7,14.96v-4.62
+                            l4,2.32v4.61L7,14.96z M12,10.93L8,8.61l4-2.31l4,2.31L12,10.93z M13,17.27v-4.61l4-2.32v4.62L13,17.27z">
+                            </path>
+                        </g>
+                    </g>
+                </svg></button>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"> -->
+    <script type="module" src="./model-viewer.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+
+    <script>
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (!isMobile) {
+            // document.getElementById('notaar').style.display = 'none';
+            const link = "https://comercial-tec-3d.clarin.com/model-car/index.html?source=qr";
+
+            // const logoUrl = "./assets/logo1.png"; // Ruta del logo
+
+            // new QRCode(document.getElementById('qrcode'), {
+            //     text: link,
+            //     width: 80,
+            //     height: 80,
+            //     colorDark: "#000000",
+            //     colorLight: "#ffffff",
+            //     correctLevel: QRCode.CorrectLevel.H
+            // });
+
+            // // Mostrar el link debajo del QR
+            // const linkElement = document.createElement('a');
+            // linkElement.href = link;
+
+            // document.body.appendChild(linkElement);
+            document.getElementById('arBut').style.display = 'none';
+
+        } else {
+            // Si es un móvil, ocultar la sección del QR
+            document.getElementById('qrcode').style.display = 'none';
+            document.getElementById('footer_desktop').style.display = 'none';
+            document.getElementById('notaar').style.display = 'block';
+            // document.getElementById('model').style.top = '0px';
+            // document.getElementById('background').style.top = '180px';
+        }
+
+    </script>
+
+
+    <!-- PARA ANIMAR EN LA NOTA CUANDO TOCO TOUCH -->
+    <script>
+
+        const modelViewer = document.querySelector('model-viewer');
+        // modelViewer.style.visibility = 'hidden';
+
+        /////////////////////////Cambiar Tamaño Foto
+        modelViewer.style.top = '-50px';
+        modelViewer.style.transform = 'scale(1)';
+
+
+        // Detectar la URL antes de que se cargue el DOM
+        // console.log(window.location.href); // Esto mostrará la URL actual en la consola
+        // const urlParams = new URLSearchParams(window.location.search);
+        // console.log(urlParams)
+        // if (urlParams.get('source') === 'qr') {
+        // document.getElementById('card').style.visibility = 'hidden';
+        // document.getElementById('loader-div').style.display = 'flex';
+        //     console.log('El usuario ingresó a través del QR');
+        //     document.getElementById('card').style.visibility = 'hidden';
+        //     document.getElementById('loader-div').style.display = 'flex';
+
+        //     document.getElementById('card').style.visibility = 'visible';
+        //     document.getElementById('loader-div').style.display = 'none';
+
+
+        //     const supportsAR = await modelViewer.canActivateAR;
+
+
+
+        //     if (supportsAR) {
+        //         modelViewer.activateAR();
+        //     } else {
+        //         alert('Tu dispositivo no es compatible con realidad aumentada.');
+        //     }
+        // }
+        // else {
+        //     document.getElementById('card').style.visibility = 'visible';
+        //     document.getElementById('loader-div').style.display = 'none';
+
+        //     document.getElementById('card').style.visibility = 'hidden';
+        //     document.getElementById('loader-div').style.display = 'flex';
+        //     console.log("no entro por qr")
+        // }
+
+
+
+        // Si necesitas hacer algo antes de que el DOM esté listo
+        window.addEventListener('load', function () {
+            console.log("La página ha cargado completamente.");
+            async function handleQRCodeAccess() {
+                const urlParams = new URLSearchParams(window.location.search);
+
+                if (urlParams.get('source') === 'qr') {
+                    console.log('El usuario ingresó a través del QR');
+                    document.getElementById('card').style.visibility = 'hidden';
+                    document.getElementById('loader-div').style.display = 'flex';
+
+                    // document.getElementById('card').style.visibility = 'visible';
+                    // document.getElementById('loader-div').style.display = 'none';
+
+
+                    const supportsAR = await modelViewer.canActivateAR;
+
+
+
+                    if (supportsAR) {
+                        modelViewer.activateAR();
+                    } else {
+                        alert('Tu dispositivo no es compatible con realidad aumentada.');
+                    }
+                } else {
+                    document.getElementById('card').style.visibility = 'visible';
+                    document.getElementById('loader-div').style.display = 'none';
+
+                    // document.getElementById('card').style.visibility = 'hidden';
+                    // document.getElementById('loader-div').style.display = 'flex';
+                    // console.log("no entro por qr")
+                }
+            }
+
+            handleQRCodeAccess();
+        });
+
+
+        modelViewer.addEventListener('load', () => {
+            const arButton = modelViewer.shadowRoot.querySelector('.ar-button');
+
+            const arBut = document.getElementById('arBut');
+
+            arBut.addEventListener('click', async () => {
+                // Comprobar si el dispositivo soporta AR
+                const supportsAR = await modelViewer.canActivateAR;
+
+                if (supportsAR) {
+                    // document.querySelector('button[slot="ar-button"]').disabled = true;
+                    window.open("https://comercial-tec-3d.clarin.com/model-car/index-but.html");
+
+                    modelViewer.activateAR();
+                } else {
+
+                    console.log('Tu dispositivo no es compatible con realidad aumentada.');
+                }
+            });
+
+            // Escuchar el evento 'ar-status' para restablecer el estado
+
+            // Detectar cuando vuelve al navegador
+            window.addEventListener('focus', () => {
+                // console.log('El navegador tiene foco, puedes volver a activar la AR');
+                // document.querySelector('button[slot="ar-button"]').disabled = false;
+                // window.open("https://dreamy-toffee-923ad0.netlify.app/index.html");
+            });
+
+
+            if (arButton) {
+                console.log("Botón AR encontrado:", arButton);
+                arButton.style.boder = '1px solid white';
+                arButton.style.cursor = 'pointer';
+                // arButton.style.zIndex = '1000';
+                // arButton.style.background = 'yellow';
+                arButton.style.width = '70px';
+                arButton.style.height = '70px';
+                arButton.style.transform = 'scale(1.2)';
+
+                arButton.style.position = 'absolute';
+                arButton.style.top = '450px';
+                arButton.style.left = '220px';
+                // arButton.style.visibility = 'visible';
+                arButton.style.visibility = 'hidden';
+                // modelViewer.style.visibility = 'visible';
+                modelViewer.style.transform = 'scale(1)';
+                modelViewer.style.top = '-50px';
+                // console.log(modelViewer.activateAR());
+
+
+            } else {
+                console.log("Botón AR no disponible");
+            }
+        });
+
+
+        // if (arButton) {
+        //     arButton.style.backgroundColor = '#007bff';
+        //     arButton.style.padding = '12px 24px';
+        //     arButton.style.borderRadius = '8px';
+        // }
+        // Cuando el usuario toca la pantalla, iniciar la animación
+        window.addEventListener('touchstart', () => {
+            // Asegúrate de que el modelo esté cargado
+            if (modelViewer.availableAnimations.length > 0) {
+                // Reproduce la primera animación disponible
+                modelViewer.animationName = modelViewer.availableAnimations[0];
+                modelViewer.play();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

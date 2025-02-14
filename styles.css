@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif; */
+  color: #244376;
+  font-family: "Noto Sans", serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+
+#card {
+  position: relative;
+  /* border: 1px solid red; */
+  /* margin: 3em auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  max-width: 300px;
+  height: 600px;
+  
+  /* border-radius: 6px; */
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25); */
+  /* background: radial-gradient(circle, #466e70, #192e2b 60%, #1e2725 100%); */
+  background: #1e2725;
+  overflow: hidden;
+  z-index: 0;
+  visibility: hidden;
+  
+}
+
+.loader-div {
+
+
+  display: none;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.loader {
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #f03355;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  animation: l1 2s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+@keyframes l1 {
+  33% {
+    border-radius: 0;
+    background: #514b82;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+  }
+
+  66% {
+    border-radius: 0;
+    background: #ffa516;
+    clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%)
+  }
+}
+
+
+
+
+.logo {
+  color: red;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 11px;
+  left: 12px;
+  z-index: 999;
+}
+
+.div_noticia {
+  /* border: 1px solid red; */
+  padding: 0 12px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  color: white;
+  position: absolute;
+  top: 70px;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 28px;
+  margin: 0;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.cuerpo {
+  font-size: 19px;
+  margin: 10px 0 0 0;
+  font-weight: lighter;
+  font-weight: 300;
+  z-index: 999;
+}
+
+/* back del model */
+/* .background {
+  position: absolute;
+  top: 150px;
+  background: radial-gradient(circle, #03888f, #00ffd9 60%, #00ffc8 100%);
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  display: flex;
+} */
+.background {
+  /* border: 1px solid green; */
+  position: absolute;
+  top: 130px;
+  background: #1e2725;
+  width: 300px;
+  height: 30px;
+  z-index: 500;
+  display: flex;
+  /* display: none; */
+}
+
+model-viewer::part(poster) {
+  width: 2px;
+  /* Puedes ajustar el porcentaje o el valor en píxeles */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+}
+
+model-viewer {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: 0px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transform: scale(0.8); */
+  width: 300px;
+  height: 700px;
+  /* margin-bottom: 70px; */
+  /* border: 1px solid green; */
+  /* background: radial-gradient(circle, #466e70, #192e2b 60%, #1e2725 100%); */
+  /* border-radius: 50%; */
+  /* background: radial-gradient(circle, #5b867e, #1c2523 60%, #1e2725 100%); */
+  /* background: radial-gradient(circle, #365253 50%, #121f1d 100%); */
+  /* background-color: #273834; */
+  /* background: radial-gradient(circle, #324a4b, #1c3632 60%, #212c29 100%); */
+  /* --poster-color: #ffffff00; */
+  transform: scale(1);
+  z-index: 400;
+
+}
+
+model-viewer.show::part(poster) {
+  width: 2px;
+  /* O cualquier tamaño que prefieras */
+  height: auto;
+  /* Mantener la proporción de la imagen */
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  /* border: 1px solid green; */
+  width: 100px;
+  z-index: 999;
+}
+
+.code {
+  /* border: 1px solid white; */
+  padding: 5px;
+  border-radius: 15px;
+  z-index: 999;
+}
+
+.codepng {
+  /* border: 1px solid white; */
+  /* position: absolute; */
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid green; */
+  width: 80px;
+  height: 80px;
+  /* bottom: 0px;
+  right: 0; */
+  padding: 5px;
+  border-radius: 15px;
+  z-index: 999;
+}
+
+.codepng img {
+  width: 80px;
+  height: 80px;
+
+}
+
+.indicacion {
+  /* border: 1px solid green; */
+  text-align: end;
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.indicacion p {
+  /* border: 1px solid green; */
+  text-align: end;
+  margin: 4px 0;
+  padding: 0;
+  color: rgb(240, 240, 240);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+
+
+.attribution {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2em 0;
+  text-align: center;
+}
+
+.attribution h1 {
+  margin: 0 0 0.25em;
+}
+
+.attribution img {
+  opacity: 0.5;
+  height: 2em;
+}
+
+.attribution .cc {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5em;
+}
+
+
+.footer_mobile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+  right: 20px;
+  width: fit-content;
+  height: 80px;
+  /* border: 1px solid red; */
+  z-index: 1001;
+}
+
+.notaar {
+  /* border: 1px solid red; */
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+
+  padding-top: 7px;
+  /* font-style: italic; */
+  font-size: 10px;
+
+}
+
+.notaar p {
+  text-align: end;
+  font-size: 12px;
+  line-height: 1;
+  /* Ajusta este valor para reducir el espacio entre líneas */
+}
+
+
+.arbut {
+  z-index: 1000;
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: none;
+  border: none;
+  /* border: 1px solid yellow; */
+  color: white;
+}
+
+.qrrr {
+
+  z-index: 1500;
+}
+
+
+
+
+
+#error {
+  background-color: #ffffffdd;
+  border-radius: 16px;
+  padding: 16px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity 0.3s;
+}
+
+#error.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 2s, opacity 1s 1s;
+}
