@@ -18,7 +18,7 @@
             // document.getElementById('card').style.visibility = 'hidden';
             document.getElementById('loader-div').style.display = 'flex';
         }
-        console.log(urlParams.size === 0)
+        // console.log(urlParams.size === 0)
         if (urlParams.size === 0) {
             // document.getElementById('card').style.visibility = 'hidden';
             // document.getElementById('loader-div').style.display = 'flex';
@@ -28,10 +28,8 @@
         <div id="loader" class="loader"></div>
         <h1>Cargando AR</h1>
     </div>
-    <model-viewer id="model" src="./assets/mike.glb" poster="./assets/mike.png" ar camera-controls touch-action="pan-y"
-        auto-rotate disable-pan alt="A 3D model of an astronaut" shadow-intensity="2" camera-orbit="-0deg 90deg auto"
-        min-camera-orbit="auto 30deg" max-camera-orbit="auto 120deg" xr-environment exposure="0.8" ar-placement="floor">
-    </model-viewer>
+    <model-viewer style="visibility: hidden;" id="model" src="./assets/mike.glb" poster="./assets/mike.png" ar camera-controls
+    touch-action="pan-y" auto-rotate disable-pan alt="A 3D model of an astronaut" shadow-intensity="2" camera-orbit="-0deg 85deg auto" min-camera-orbit="auto 50deg" max-camera-orbit="auto 90deg" xr-environment exposure="2.5"></model-viewer>
 
 
 
