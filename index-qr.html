@@ -28,8 +28,10 @@
         <div id="loader" class="loader"></div>
         <h1>Cargando AR</h1>
     </div>
-    <model-viewer style="visibility: hidden;" id="model" src="./assets/mike.glb" poster="./assets/mike.png" ar camera-controls
-    touch-action="pan-y" auto-rotate disable-pan alt="A 3D model of an astronaut" shadow-intensity="2" camera-orbit="-0deg 85deg auto" min-camera-orbit="auto 50deg" max-camera-orbit="auto 90deg" xr-environment exposure="2.5"></model-viewer>
+    <model-viewer style="visibility: hidden;" id="model" src="./assets/mike.glb" poster="./assets/mike.png" ar
+        camera-controls touch-action="pan-y" auto-rotate disable-pan alt="A 3D model of an astronaut"
+        shadow-intensity="2" camera-orbit="-0deg 85deg auto" min-camera-orbit="auto 50deg" max-camera-orbit="auto 90deg"
+        xr-environment exposure="2.5"></model-viewer>
 
 
 
@@ -53,14 +55,14 @@
         // Si necesitas hacer algo antes de que el DOM esté listo
         window.addEventListener('load', function () {
             console.log("La página ha cargado completamente.");
-            async function handleQRCodeAccess() {
+            function handleQRCodeAccess() {
                 const urlParams = new URLSearchParams(window.location.search);
 
                 if (window.location.href.includes('index-qr.html')) {
                     console.log('El usuario ingresó a través del QR');
                     document.getElementById('loader-div').style.display = 'flex';
 
-                    const supportsAR = await modelViewer.canActivateAR;
+                    const supportsAR = modelViewer.canActivateAR;
 
 
 

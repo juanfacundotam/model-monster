@@ -147,7 +147,7 @@
         // Si necesitas hacer algo antes de que el DOM esté listo
         window.addEventListener('load', function () {
             console.log("La página ha cargado completamente.");
-            async function handleQRCodeAccess() {
+            function handleQRCodeAccess() {
                 const urlParams = new URLSearchParams(window.location.search);
 
                 if (window.location.href.includes('index-but.html')) {
@@ -159,7 +159,7 @@
                     // document.getElementById('loader-div').style.display = 'none';
 
 
-                    const supportsAR = await modelViewer.canActivateAR;
+                    const supportsAR = modelViewer.canActivateAR;
 
 
 
