@@ -13,7 +13,7 @@
 <body>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        console.log(urlParams)
+        // console.log(urlParams)
         if (urlParams.get('source') === 'qr') {
             // document.getElementById('card').style.visibility = 'hidden';
             document.getElementById('loader-div').style.display = 'flex';
@@ -54,12 +54,12 @@
 
         // Si necesitas hacer algo antes de que el DOM esté listo
         window.addEventListener('load', function () {
-            console.log("La página ha cargado completamente.");
+            // console.log("La página ha cargado completamente.");
             function handleQRCodeAccess() {
                 const urlParams = new URLSearchParams(window.location.search);
 
                 if (window.location.href.includes('index-qr.html')) {
-                    console.log('El usuario ingresó a través del QR');
+                    // console.log('El usuario ingresó a través del QR');
                     document.getElementById('loader-div').style.display = 'flex';
 
                     const supportsAR = modelViewer.canActivateAR;

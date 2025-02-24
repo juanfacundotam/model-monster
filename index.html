@@ -19,12 +19,12 @@
     <!-- links 182, qr -->
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        console.log(urlParams)
+        // console.log(urlParams)
         if (urlParams.get('source') === 'qr') {
             document.getElementById('card').style.visibility = 'hidden';
             document.getElementById('loader-div').style.display = 'flex';
         }
-        console.log(urlParams.size === 0)
+        // console.log(urlParams.size === 0)
         if (urlParams.size === 0) {
             // document.getElementById('card').style.visibility = 'hidden';
             // document.getElementById('loader-div').style.display = 'flex';
@@ -146,12 +146,12 @@
 
         // Si necesitas hacer algo antes de que el DOM esté listo
         window.addEventListener('load', function () {
-            console.log("La página ha cargado completamente.");
+            // console.log("La página ha cargado completamente.");
             function handleQRCodeAccess() {
                 const urlParams = new URLSearchParams(window.location.search);
 
                 if (urlParams.get('source') === 'qr') {
-                    console.log('El usuario ingresó a través del QR');
+                    // console.log('El usuario ingresó a través del QR');
                     document.getElementById('card').style.visibility = 'hidden';
                     document.getElementById('loader-div').style.display = 'flex';
 
@@ -189,8 +189,8 @@
                     modelViewer.style.top = '0px';
 
                     // modelViewer.style.top = '-1000px';
-
-                    console.log('Tu dispositivo no es compatible con realidad aumentada.');
+                    alert('Tu dispositivo no es compatible con realidad aumentada.');
+                    // console.log('Tu dispositivo no es compatible con realidad aumentada.');
                 }
             });
 
@@ -201,7 +201,7 @@
 
 
             if (arButton) {
-                console.log("Botón AR encontrado:", arButton);
+                // console.log("Botón AR encontrado:", arButton);
                 arButton.style.visibility = 'hidden';
                 // arButton.style.boder = '1px solid white';
                 // arButton.style.cursor = 'pointer';
@@ -216,7 +216,7 @@
 
 
             } else {
-                console.log("Botón AR no disponible");
+                // console.log("Botón AR no disponible");
             }
         });
 
