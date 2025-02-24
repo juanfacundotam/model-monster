@@ -54,6 +54,24 @@
 
         // Si necesitas hacer algo antes de que el DOM esté listo
         window.addEventListener('load', function () {
+
+            function intentarActivarAR(intentos = 0) {
+                const supportsAR = modelViewer.canActivateAR;
+
+                console.log(`Intento ${intentos + 1}: Estado de canActivateAR:`, supportsAR);
+
+                if (supportsAR) {
+                    console.log("Activando AR...");
+                    modelViewer.activateAR();
+                } else if (intentos < 2) {
+                    console.log("AR aún no disponible, reintentando...");
+                    setTimeout(() => intentarActivarAR(intentos + 1), 300); // Espera 200ms y reintenta
+                } else {
+                    console.log("No se pudo activar AR después de 3 intentos.");
+                }
+            }
+
+
             // console.log("La página ha cargado completamente.");
             function handleQRCodeAccess() {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -61,24 +79,22 @@
                 if (window.location.href.includes('index-qr.html')) {
                     // console.log('El usuario ingresó a través del QR');
                     document.getElementById('loader-div').style.display = 'flex';
-
-                    const supportsAR = modelViewer.canActivateAR;
-
-
-
-                    if (supportsAR) {
-                        modelViewer.activateAR();
-                    } else {
-                        alert('Tu dispositivo no es compatible con realidad aumentada.');
-                    }
+                    // Intentamos activar AR
+                    intentarActivarAR();
                 } else {
                     document.getElementById('loader-div').style.display = 'none';
-
                 }
             }
-
             handleQRCodeAccess();
         });
+
+
+
+
+
+
+
+
 
 
 

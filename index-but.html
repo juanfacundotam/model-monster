@@ -66,13 +66,15 @@
         <div id="loader" class="loader"></div>
         <h1>Cargando AR</h1>
     </div>
-    <model-viewer style="visibility: hidden;" id="model" src="./assets/mike.glb" poster="./assets/mike.png" ar camera-controls
-        touch-action="pan-y" auto-rotate disable-pan alt="A 3D model of an astronaut" shadow-intensity="2" camera-orbit="-0deg 85deg auto" min-camera-orbit="auto 50deg" max-camera-orbit="auto 90deg" xr-environment exposure="2.5"></model-viewer>
+    <model-viewer style="visibility: hidden;" id="model" src="./assets/mike.glb" poster="./assets/mike.png" ar
+        camera-controls touch-action="pan-y" auto-rotate disable-pan alt="A 3D model of an astronaut"
+        shadow-intensity="2" camera-orbit="-0deg 85deg auto" min-camera-orbit="auto 50deg" max-camera-orbit="auto 90deg"
+        xr-environment exposure="2.5"></model-viewer>
     <!-- <div id="card"> -->
 
- 
 
-        <!-- <model-viewer id="model" src="./assets/auto.glb"  poster="./assets/auto.png"
+
+    <!-- <model-viewer id="model" src="./assets/auto.glb"  poster="./assets/auto.png"
             alt="Darthg model" shadow-intensity="1" camera-controls auto-rotate ar disable-zoom
             camera-orbit="-30deg 70deg auto" loading="eager" min-camera-orbit="auto 60deg"
             max-camera-orbit="auto 110deg" skybox-image="./assets/22.png" skybox-height="200cm" xr-environment exposure="3" ar-scale="fixed">
@@ -80,7 +82,7 @@
 
 
 
-      
+
 
     <!-- </div> -->
 
@@ -147,34 +149,32 @@
         // Si necesitas hacer algo antes de que el DOM esté listo
         window.addEventListener('load', function () {
             // console.log("La página ha cargado completamente.");
+
+            function intentarActivarAR(intentos = 0) {
+                const supportsAR = modelViewer.canActivateAR;
+
+                console.log(`Intento ${intentos + 1}: Estado de canActivateAR:`, supportsAR);
+
+                if (supportsAR) {
+                    console.log("Activando AR...");
+                    modelViewer.activateAR();
+                } else if (intentos < 2) {
+                    console.log("AR aún no disponible, reintentando...");
+                    setTimeout(() => intentarActivarAR(intentos + 1), 300); // Espera 200ms y reintenta
+                } else {
+                    console.log("No se pudo activar AR después de 3 intentos.");
+                }
+            }
+
             function handleQRCodeAccess() {
                 const urlParams = new URLSearchParams(window.location.search);
 
                 if (window.location.href.includes('index-but.html')) {
-                    // console.log('El usuario ingresó a través del QR');
-                    // document.getElementById('card').style.visibility = 'hidden';
                     document.getElementById('loader-div').style.display = 'flex';
-
-                    // document.getElementById('card').style.visibility = 'visible';
-                    // document.getElementById('loader-div').style.display = 'none';
-
-
-                    const supportsAR = modelViewer.canActivateAR;
-
-
-
-                    if (supportsAR) {
-                        modelViewer.activateAR();
-                    } else {
-                        alert('Tu dispositivo no es compatible con realidad aumentada.');
-                    }
+                    // Intentamos activar AR
+                    intentarActivarAR();
                 } else {
-                    // document.getElementById('card').style.visibility = 'visible';
                     document.getElementById('loader-div').style.display = 'none';
-
-                    // document.getElementById('card').style.visibility = 'hidden';
-                    // document.getElementById('loader-div').style.display = 'flex';
-                    // console.log("no entro por qr")
                 }
             }
 
